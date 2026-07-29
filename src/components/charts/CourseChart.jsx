@@ -7,7 +7,7 @@ function CourseChart({ courseCounts }) {
     labels: courseCounts.map((c) => c.course),
     datasets: [
       {
-        label: 'Tasks',
+        label: 'Assignments',
         data: courseCounts.map((c) => c.count),
         backgroundColor: '#2563eb',
         borderRadius: 6,
@@ -24,7 +24,7 @@ function CourseChart({ courseCounts }) {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: (ctx) => ` ${ctx.parsed.x} task${ctx.parsed.x === 1 ? '' : 's'}`,
+          label: (ctx) => ` ${ctx.parsed.x} assignment${ctx.parsed.x === 1 ? '' : 's'}`,
         },
       },
     },
@@ -42,7 +42,7 @@ function CourseChart({ courseCounts }) {
   }
 
   return (
-    <ChartCard title="Tasks by course">
+    <ChartCard title="Assignments by course">
       {courseCounts.length > 0 ? (
         <Bar data={data} options={options} />
       ) : (
@@ -55,7 +55,7 @@ function CourseChart({ courseCounts }) {
 function EmptyState() {
   return (
     <div className="flex h-full items-center justify-center text-sm text-slate-400">
-      No tasks yet.
+      No assignments yet.
     </div>
   )
 }

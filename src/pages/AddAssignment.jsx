@@ -31,8 +31,8 @@ function AddAssignment() {
     <div className="mx-auto max-w-2xl space-y-6">
       <PageHeader
         icon={<PlusIcon className="h-5 w-5" />}
-        title="Add task"
-        description="Fill in the details below to create a new task."
+        title="Add assignment"
+        description="Fill in the details below to create a new assignment."
       />
 
       <AssignmentForm
@@ -47,7 +47,7 @@ function AddAssignment() {
           to="/assignments"
           className="font-medium text-blue-600 transition-colors hover:text-blue-500"
         >
-          ← Back to tasks
+          ← Back to assignments
         </Link>
       </p>
     </div>

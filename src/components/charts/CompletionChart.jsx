@@ -6,7 +6,7 @@ function CompletionChart({ completed, remaining }) {
   const total = completed + remaining
 
   const data = {
-    labels: ['Achieved', 'To Do'],
+    labels: ['Achieved', 'Remaining'],
     datasets: [
       {
         data: [completed, remaining],
@@ -40,7 +40,7 @@ function CompletionChart({ completed, remaining }) {
 
   return (
     <ChartCard
-      title="Achieved vs. To Do"
+      title="Achieved vs. remaining"
       description={undefined}
     >
       {total > 0 ? (
@@ -63,7 +63,7 @@ function CompletionChart({ completed, remaining }) {
 function EmptyState() {
   return (
     <div className="flex h-full items-center justify-center text-sm text-slate-400">
-      No tasks yet.
+      No assignments yet.
     </div>
   )
 }

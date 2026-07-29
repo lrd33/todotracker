@@ -1,6 +1,6 @@
 function FilterTabs({ filters, active, onChange }) {
   return (
-    <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter tasks">
+    <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter assignments">
       {filters.map((filter) => {
         const isActive = filter.key === active
         return (

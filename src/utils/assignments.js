@@ -33,10 +33,9 @@ export function categorizeAssignments(assignments, referenceDate = new Date()) {
   return { today, upcoming, overdue, completed }
 }
 
-/** Whether an assignment belongs to a given filter tab ('all' | 'completed' | 'upcoming' | 'overdue' | 'high'). */
+/** Whether an assignment belongs to a given filter tab ('all' | 'completed' | 'upcoming' | 'overdue'). */
 export function matchesCategoryFilter(assignment, filterKey, referenceDate = new Date()) {
   if (filterKey === 'all') return true
-  if (filterKey === 'high') return assignment.priority === 'high'
 
   const status = getAssignmentStatus(assignment, referenceDate)
   if (filterKey === 'completed') return status === 'completed'
@@ -78,8 +77,8 @@ export function getCourseCounts(assignments) {
     .map(([course, count]) => ({ course, count }))
 }
 
-/** Assignment counts grouped by priority level. */
-export function getPriorityCounts(assignments) {
+/** Assignment counts grouped by urgency level. */
+export function getUrgencyCounts(assignments) {
   const counts = { high: 0, medium: 0, low: 0 }
   for (const assignment of assignments) {
     if (counts[assignment.priority] !== undefined) counts[assignment.priority] += 1
@@ -87,10 +86,10 @@ export function getPriorityCounts(assignments) {
   return counts
 }
 
-export const PRIORITY_STYLES = {
-  high: { label: 'High priority', shortLabel: 'High', dot: 'bg-red-500', text: 'text-red-700' },
-  medium: { label: 'Medium priority', shortLabel: 'Medium', dot: 'bg-amber-500', text: 'text-amber-700' },
-  low: { label: 'Low priority', shortLabel: 'Low', dot: 'bg-slate-400', text: 'text-slate-600' },
+export const URGENCY_STYLES = {
+  high: { label: 'High urgency', shortLabel: 'High', dot: 'bg-red-500', text: 'text-red-700' },
+  medium: { label: 'Medium urgency', shortLabel: 'Medium', dot: 'bg-amber-500', text: 'text-amber-700' },
+  low: { label: 'Low urgency', shortLabel: 'Low', dot: 'bg-slate-400', text: 'text-slate-600' },
 }
 
 export const STATUS_STYLES = {

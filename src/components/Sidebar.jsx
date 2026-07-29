@@ -3,7 +3,7 @@ import { DashboardIcon, AssignmentsIcon, CalendarIcon, SettingsIcon } from './ic
 
 const navItems = [
   { to: '/', label: 'Dashboard', icon: DashboardIcon, end: true },
-  { to: '/assignments', label: 'Tasks', icon: AssignmentsIcon },
+  { to: '/assignments', label: 'Assignments', icon: AssignmentsIcon },
   { to: '/calendar', label: 'Calendar', icon: CalendarIcon },
   { to: '/settings', label: 'Settings', icon: SettingsIcon },
 ]

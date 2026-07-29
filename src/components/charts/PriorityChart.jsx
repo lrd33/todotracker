@@ -2,14 +2,14 @@ import '../../charts/registerChartJs.js'
 import { Doughnut } from 'react-chartjs-2'
 import ChartCard from './ChartCard.jsx'
 
-function PriorityChart({ priorityCounts }) {
-  const total = priorityCounts.high + priorityCounts.medium + priorityCounts.low
+function UrgencyChart({ urgencyCounts }) {
+  const total = urgencyCounts.high + urgencyCounts.medium + urgencyCounts.low
 
   const data = {
-    labels: ['High', 'Medium', 'Low'],
+    labels: ['High urgency', 'Medium urgency', 'Low urgency'],
     datasets: [
       {
-        data: [priorityCounts.high, priorityCounts.medium, priorityCounts.low],
+        data: [urgencyCounts.high, urgencyCounts.medium, urgencyCounts.low],
         backgroundColor: ['#ef4444', '#f59e0b', '#94a3b8'],
         borderColor: '#ffffff',
         borderWidth: 2,
@@ -38,7 +38,7 @@ function PriorityChart({ priorityCounts }) {
   }
 
   return (
-    <ChartCard title="Work Queue" description="How your work is weighted">
+    <ChartCard title="Assignment load" description="How your coursework is distributed">
       {total > 0 ? <Doughnut data={data} options={options} /> : <EmptyState />}
     </ChartCard>
   )
@@ -47,9 +47,9 @@ function PriorityChart({ priorityCounts }) {
 function EmptyState() {
   return (
     <div className="flex h-full items-center justify-center text-sm text-slate-400">
-      No tasks yet.
+      No assignments yet.
     </div>
   )
 }
 
-export default PriorityChart
+export default UrgencyChart
