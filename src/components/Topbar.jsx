@@ -55,8 +55,8 @@ function Topbar({ onMenuClick, menuButtonRef }) {
         <span className="hidden text-base font-bold tracking-tight text-slate-900 sm:inline">
           Academic Tracker
         </span>
-        <span className="max-w-[110px] truncate text-[10px] font-bold tracking-tight text-slate-900 sm:hidden">
-          Academic Tracker
+        <span className="text-base font-bold tracking-tight text-slate-900 sm:hidden">
+          ADT
         </span>
       </div>
 

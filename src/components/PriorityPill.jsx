@@ -1,7 +1,7 @@
-import { URGENCY_STYLES } from '../utils/assignments.js'
+import { PRIORITY_STYLES } from '../utils/assignments.js'
 
-function UrgencyPill({ priority }) {
-  const style = URGENCY_STYLES[priority] ?? URGENCY_STYLES.low
+function PriorityPill({ priority }) {
+  const style = PRIORITY_STYLES[priority] ?? PRIORITY_STYLES.low
 
   return (
     <span className={`inline-flex items-center gap-1.5 text-xs font-medium ${style.text}`}>
@@ -11,4 +11,4 @@ function UrgencyPill({ priority }) {
   )
 }
 
-export default UrgencyPill
+export default PriorityPill

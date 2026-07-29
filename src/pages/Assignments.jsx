@@ -22,6 +22,7 @@ function Assignments() {
       completed: sorted.filter((a) => matchesCategoryFilter(a, 'completed')).length,
       upcoming: sorted.filter((a) => matchesCategoryFilter(a, 'upcoming')).length,
       overdue: sorted.filter((a) => matchesCategoryFilter(a, 'overdue')).length,
+      high: sorted.filter((a) => matchesCategoryFilter(a, 'high')).length,
     }),
     [sorted],
   )
@@ -31,6 +32,7 @@ function Assignments() {
     { key: 'completed', label: 'Achieved', count: filterCounts.completed },
     { key: 'upcoming', label: 'Upcoming', count: filterCounts.upcoming },
     { key: 'overdue', label: 'Overdue', count: filterCounts.overdue },
+    { key: 'high', label: 'High priority', count: filterCounts.high },
   ]
 
   const byCategory = useMemo(
@@ -59,11 +61,11 @@ function Assignments() {
     <div className="space-y-6">
       <PageHeader
         icon={<AssignmentsIcon className="h-5 w-5" />}
-        title="Assignments"
+        title="Tasks"
         description={
           isFiltering
-            ? `${filtered.length} of ${sorted.length} assignments`
-            : `${sorted.length} assignment${sorted.length === 1 ? '' : 's'} total`
+            ? `${filtered.length} of ${sorted.length} tasks`
+            : `${sorted.length} task${sorted.length === 1 ? '' : 's'} total`
         }
         actions={
           <Link
@@ -71,7 +73,7 @@ function Assignments() {
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm shadow-blue-600/30 transition-all duration-150 hover:scale-[1.02] hover:bg-blue-700 hover:shadow-md active:scale-[0.98]"
           >
             <PlusIcon className="h-4 w-4" />
-            Add assignment
+            Add task
           </Link>
         }
       />
@@ -95,8 +97,8 @@ function Assignments() {
             ? {
                 title: 'No matches',
                 body: query
-                  ? `No assignments match "${query}".`
-                  : 'No assignments match this filter.',
+                  ? `No tasks match "${query}".`
+                  : 'No tasks match this filter.',
               }
             : undefined
         }

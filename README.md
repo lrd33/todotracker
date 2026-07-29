@@ -1,4 +1,4 @@
-# Academic Tracker
+# Assignment Deadline Tracker
 
 A React + Vite + Tailwind CSS + React Router project scaffold. No features
 have been built yet — this is the base structure ready for development.

@@ -6,7 +6,7 @@ function validate(values) {
     errors.courseName = 'Course name is required.'
   }
   if (!values.assignmentTitle.trim()) {
-    errors.assignmentTitle = 'Assignment title is required.'
+    errors.assignmentTitle = 'Task title is required.'
   }
   if (!values.dueDate) {
     errors.dueDate = 'Due date is required.'
@@ -50,7 +50,7 @@ function AssignmentForm({ initialValues, onSubmit, onCancel, submitLabel = 'Save
         />
       </Field>
 
-      <Field label="Assignment title" htmlFor="assignmentTitle" error={errors.assignmentTitle} required>
+      <Field label="Task title" htmlFor="assignmentTitle" error={errors.assignmentTitle} required>
         <input
           id="assignmentTitle"
           type="text"
@@ -67,12 +67,12 @@ function AssignmentForm({ initialValues, onSubmit, onCancel, submitLabel = 'Save
           rows={4}
           value={form.description}
           onChange={handleChange('description')}
-          placeholder="Add any notes or instructions for this assignment."
+          placeholder="Add any notes or instructions for this task."
           className={inputClass(errors.description)}
         />
       </Field>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-1">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label="Due date" htmlFor="dueDate" error={errors.dueDate} required>
           <input
             id="dueDate"
@@ -81,6 +81,19 @@ function AssignmentForm({ initialValues, onSubmit, onCancel, submitLabel = 'Save
             onChange={handleChange('dueDate')}
             className={inputClass(errors.dueDate)}
           />
+        </Field>
+
+        <Field label="Priority" htmlFor="priority" error={errors.priority}>
+          <select
+            id="priority"
+            value={form.priority}
+            onChange={handleChange('priority')}
+            className={inputClass(errors.priority)}
+          >
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
         </Field>
       </div>
 

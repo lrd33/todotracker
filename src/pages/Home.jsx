@@ -3,7 +3,7 @@ import {
   categorizeAssignments,
   getCompletionCounts,
   getCourseCounts,
-  getUrgencyCounts,
+  getPriorityCounts,
 } from '../utils/assignments.js'
 import { formatDueLabel, formatCompletedLabel } from '../utils/date.js'
 import PageHeader from '../components/PageHeader.jsx'
@@ -11,7 +11,7 @@ import AssignmentCategoryCard from '../components/AssignmentCategoryCard.jsx'
 import AssignmentListItem from '../components/AssignmentListItem.jsx'
 import CompletionChart from '../components/charts/CompletionChart.jsx'
 import CourseChart from '../components/charts/CourseChart.jsx'
-import UrgencyChart from '../components/charts/PriorityChart.jsx'
+import PriorityChart from '../components/charts/PriorityChart.jsx'
 import { DashboardIcon, SunIcon, CalendarIcon, AlertTriangleIcon, CheckCircleIcon } from '../components/icons.jsx'
 
 function Home() {
@@ -20,14 +20,14 @@ function Home() {
 
   const completionCounts = getCompletionCounts(assignments)
   const courseCounts = getCourseCounts(assignments)
-  const urgencyCounts = getUrgencyCounts(assignments)
+  const priorityCounts = getPriorityCounts(assignments)
 
   return (
     <div className="space-y-8">
       <PageHeader
         icon={<DashboardIcon className="h-5 w-5" />}
         title="Dashboard"
-        description="Your assignments."
+        description="Your tasks."
       />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -36,12 +36,12 @@ function Home() {
           remaining={completionCounts.remaining}
         />
         <CourseChart courseCounts={courseCounts} />
-        <UrgencyChart urgencyCounts={urgencyCounts} />
+        <PriorityChart priorityCounts={priorityCounts} />
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <AssignmentCategoryCard
-          title="Today's assignments"
+          title="Today's tasks"
           description="Due before the end of today"
           icon={<SunIcon className="h-5 w-5" />}
           color="blue"
@@ -54,17 +54,18 @@ function Home() {
               title={item.title}
               course={item.course}
               dueLabel={formatDueLabel(item.dueDate)}
+              priority={item.priority}
             />
           ))}
         </AssignmentCategoryCard>
 
         <AssignmentCategoryCard
-          title="Upcoming assignments"
+          title="Future tasks"
           description="Due in the days ahead"
           icon={<CalendarIcon className="h-5 w-5" />}
           color="indigo"
           count={upcoming.length}
-          emptyMessage="No assignments."
+          emptyMessage="No tasks."
         >
           {upcoming.map((item) => (
             <AssignmentListItem
@@ -72,12 +73,13 @@ function Home() {
               title={item.title}
               course={item.course}
               dueLabel={formatDueLabel(item.dueDate)}
+              priority={item.priority}
             />
           ))}
         </AssignmentCategoryCard>
 
         <AssignmentCategoryCard
-          title="Overdue assignments"
+          title="Overdue tasks"
           description="Past their due date"
           icon={<AlertTriangleIcon className="h-5 w-5" />}
           color="red"
@@ -90,17 +92,18 @@ function Home() {
               title={item.title}
               course={item.course}
               dueLabel={formatDueLabel(item.dueDate)}
+              priority={item.priority}
             />
           ))}
         </AssignmentCategoryCard>
 
         <AssignmentCategoryCard
-          title="Achieved assignments"
+          title="Achieved tasks"
           
           icon={<CheckCircleIcon className="h-5 w-5" />}
           color="green"
           count={completed.length}
-          emptyMessage="No achieved assignments yet."
+          emptyMessage="No achieved tasks yet."
         >
           {completed.map((item) => (
             <AssignmentListItem
@@ -108,6 +111,7 @@ function Home() {
               title={item.title}
               course={item.course}
               dueLabel={formatCompletedLabel(item.completedDate)}
+              priority={item.priority}
             />
           ))}
         </AssignmentCategoryCard>
