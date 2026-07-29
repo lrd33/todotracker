@@ -83,7 +83,7 @@ function AssignmentForm({ initialValues, onSubmit, onCancel, submitLabel = 'Save
           />
         </Field>
 
-        <Field label="Priority" htmlFor="priority" error={errors.priority}>
+        <Field label="" htmlFor="priority" error={errors.priority}>
           <select
             id="priority"
             value={form.priority}

@@ -88,9 +88,9 @@ export function getPriorityCounts(assignments) {
 }
 
 export const PRIORITY_STYLES = {
-  high: { label: 'High priority', shortLabel: 'High', dot: 'bg-red-500', text: 'text-red-700' },
-  medium: { label: 'Medium priority', shortLabel: 'Medium', dot: 'bg-amber-500', text: 'text-amber-700' },
-  low: { label: 'Low priority', shortLabel: 'Low', dot: 'bg-slate-400', text: 'text-slate-600' },
+  high: { label: 'High', shortLabel: 'High', dot: 'bg-red-500', text: 'text-red-700' },
+  medium: { label: 'Medium', shortLabel: 'Medium', dot: 'bg-amber-500', text: 'text-amber-700' },
+  low: { label: 'Low', shortLabel: 'Low', dot: 'bg-slate-400', text: 'text-slate-600' },
 }
 
 export const STATUS_STYLES = {

@@ -32,7 +32,7 @@ function Assignments() {
     { key: 'completed', label: 'Achieved', count: filterCounts.completed },
     { key: 'upcoming', label: 'Upcoming', count: filterCounts.upcoming },
     { key: 'overdue', label: 'Overdue', count: filterCounts.overdue },
-    { key: 'high', label: 'High priority', count: filterCounts.high },
+    { key: 'high', label: 'High', count: filterCounts.high },
   ]
 
   const byCategory = useMemo(

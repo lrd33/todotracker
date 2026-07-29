@@ -25,7 +25,7 @@ function AssignmentsTable({ assignments, onEdit, onDelete, onToggleComplete, emp
               <th scope="col" className="px-5 py-3">Course</th>
               <th scope="col" className="px-5 py-3">Task name</th>
               <th scope="col" className="px-5 py-3">Due date</th>
-              <th scope="col" className="px-5 py-3">Priority</th>
+              <th scope="col" className="px-5 py-3"></th>
               <th scope="col" className="px-5 py-3">Status</th>
               <th scope="col" className="px-5 py-3 text-right">Actions</th>
             </tr>
