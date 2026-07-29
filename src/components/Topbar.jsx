@@ -53,7 +53,7 @@ function Topbar({ onMenuClick, menuButtonRef }) {
           <CalendarIcon className="h-5 w-5" />
         </span>
         <span className="hidden text-base font-bold tracking-tight text-slate-900 sm:inline">
-          Task Deadline Tracker
+          Task Tracker
         </span>
         <span className="text-base font-bold tracking-tight text-slate-900 sm:hidden">
           ADT
