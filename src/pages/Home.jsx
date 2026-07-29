@@ -80,9 +80,9 @@ function Home() {
 
         <AssignmentCategoryCard
           title="Late tasks"
-          description="Past their due date"
+          description=""
           icon={<AlertTriangleIcon className="h-5 w-5" />}
-          color="red"
+          color="black"
           count={overdue.length}
           emptyMessage="Nothing overdue. You're on track."
         >

@@ -11,6 +11,10 @@ const THEME = {
     iconWrap: 'bg-red-50 text-red-600',
     badge: 'bg-red-50 text-red-700',
   },
+  black: {
+    iconWrap: 'bg-slate-900 text-slate-50',
+    badge: 'bg-slate-900 text-slate-50',
+  },
   green: {
     iconWrap: 'bg-green-50 text-green-600',
     badge: 'bg-green-50 text-green-700',
