@@ -79,7 +79,7 @@ function Home() {
         </AssignmentCategoryCard>
 
         <AssignmentCategoryCard
-          title="Overdue tasks"
+          title="Late tasks"
           description="Past their due date"
           icon={<AlertTriangleIcon className="h-5 w-5" />}
           color="red"
