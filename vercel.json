@@ -1,4 +1,5 @@
 {
+  "name": "teamworktodotracker",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
