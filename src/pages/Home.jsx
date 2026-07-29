@@ -27,7 +27,7 @@ function Home() {
       <PageHeader
         icon={<DashboardIcon className="h-5 w-5" />}
         title="Dashboard"
-        description="Overview of your tasks."
+        description="Your tasks."
       />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
