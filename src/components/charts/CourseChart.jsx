@@ -42,7 +42,7 @@ function CourseChart({ courseCounts }) {
   }
 
   return (
-    <ChartCard title="Tasks by course" description="Where your workload is coming from">
+    <ChartCard title="Tasks by course">
       {courseCounts.length > 0 ? (
         <Bar data={data} options={options} />
       ) : (

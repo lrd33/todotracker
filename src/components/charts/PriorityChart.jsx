@@ -38,7 +38,7 @@ function PriorityChart({ priorityCounts }) {
   }
 
   return (
-    <ChartCard title="Work Queue" description="How your workload is weighted">
+    <ChartCard title="Work Queue" description="How your work is weighted">
       {total > 0 ? <Doughnut data={data} options={options} /> : <EmptyState />}
     </ChartCard>
   )

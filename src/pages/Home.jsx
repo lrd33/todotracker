@@ -60,12 +60,12 @@ function Home() {
         </AssignmentCategoryCard>
 
         <AssignmentCategoryCard
-          title="Upcoming tasks"
+          title="Future tasks"
           description="Due in the days ahead"
           icon={<CalendarIcon className="h-5 w-5" />}
           color="indigo"
           count={upcoming.length}
-          emptyMessage="No upcoming tasks."
+          emptyMessage="No tasks."
         >
           {upcoming.map((item) => (
             <AssignmentListItem
@@ -99,7 +99,7 @@ function Home() {
 
         <AssignmentCategoryCard
           title="Achieved tasks"
-          description="Turned in and done"
+          
           icon={<CheckCircleIcon className="h-5 w-5" />}
           color="green"
           count={completed.length}

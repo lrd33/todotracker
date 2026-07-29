@@ -7,7 +7,7 @@ function Calendar() {
       <PageHeader
         icon={<CalendarIcon className="h-5 w-5" />}
         title="Calendar"
-        description="View deadlines by date."
+        description="View by date."
       />
 
       <section className="animate-fade-in-up rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center transition-shadow hover:shadow-sm">
