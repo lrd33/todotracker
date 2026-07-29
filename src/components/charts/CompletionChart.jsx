@@ -10,7 +10,7 @@ function CompletionChart({ completed, remaining }) {
     datasets: [
       {
         data: [completed, remaining],
-        backgroundColor: ['#22c55e', '#2563eb'],
+        backgroundColor: ['#22c55e', '#64748b'],
         borderColor: '#ffffff',
         borderWidth: 2,
         hoverOffset: 4,
