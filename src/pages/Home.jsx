@@ -42,7 +42,7 @@ function Home() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <AssignmentCategoryCard
           title="Today's tasks"
-          description="Due before the end of today"
+          description=""
           icon={<SunIcon className="h-5 w-5" />}
           color="blue"
           count={today.length}
@@ -61,7 +61,7 @@ function Home() {
 
         <AssignmentCategoryCard
           title="Future tasks"
-          description="Due in the days ahead"
+          description=""
           icon={<CalendarIcon className="h-5 w-5" />}
           color="indigo"
           count={upcoming.length}
