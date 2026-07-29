@@ -6,8 +6,8 @@ import StatusBadge from './StatusBadge.jsx'
 
 function AssignmentsTable({ assignments, onEdit, onDelete, onToggleComplete, emptyMessage }) {
   if (assignments.length === 0) {
-    const title = emptyMessage?.title ?? 'No assignments'
-    const body = emptyMessage?.body ?? 'Assignments you add will show up here.'
+    const title = emptyMessage?.title ?? 'No tasks'
+    const body = emptyMessage?.body ?? 'Tasks you add will show up here.'
     return (
       <div className="animate-fade-in-up rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
         <p className="text-sm font-medium text-slate-700">{title}</p>
@@ -23,7 +23,7 @@ function AssignmentsTable({ assignments, onEdit, onDelete, onToggleComplete, emp
           <thead>
             <tr className="border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
               <th scope="col" className="px-5 py-3">Course</th>
-              <th scope="col" className="px-5 py-3">Assignment name</th>
+              <th scope="col" className="px-5 py-3">Task name</th>
               <th scope="col" className="px-5 py-3">Due date</th>
               <th scope="col" className="px-5 py-3">Priority</th>
               <th scope="col" className="px-5 py-3">Status</th>
@@ -69,11 +69,11 @@ function AssignmentsTable({ assignments, onEdit, onDelete, onToggleComplete, emp
                         ].join(' ')}
                         aria-label={
                           assignment.status === 'completed'
-                            ? `Mark ${assignment.title} as not completed`
-                            : `Mark ${assignment.title} as completed`
+                            ? `Mark ${assignment.title} as not achieved`
+                            : `Mark ${assignment.title} as achieved`
                         }
                         aria-pressed={assignment.status === 'completed'}
-                        title={assignment.status === 'completed' ? 'Mark as not completed' : 'Mark as completed'}
+                        title={assignment.status === 'completed' ? 'Mark as not achieved' : 'Mark as achieved'}
                       >
                         <CheckCircleIcon className="h-4 w-4" />
                       </button>

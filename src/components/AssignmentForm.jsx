@@ -6,7 +6,7 @@ function validate(values) {
     errors.courseName = 'Course name is required.'
   }
   if (!values.assignmentTitle.trim()) {
-    errors.assignmentTitle = 'Assignment title is required.'
+    errors.assignmentTitle = 'Task title is required.'
   }
   if (!values.dueDate) {
     errors.dueDate = 'Due date is required.'
@@ -50,7 +50,7 @@ function AssignmentForm({ initialValues, onSubmit, onCancel, submitLabel = 'Save
         />
       </Field>
 
-      <Field label="Assignment title" htmlFor="assignmentTitle" error={errors.assignmentTitle} required>
+      <Field label="Task title" htmlFor="assignmentTitle" error={errors.assignmentTitle} required>
         <input
           id="assignmentTitle"
           type="text"
@@ -67,7 +67,7 @@ function AssignmentForm({ initialValues, onSubmit, onCancel, submitLabel = 'Save
           rows={4}
           value={form.description}
           onChange={handleChange('description')}
-          placeholder="Add any notes or instructions for this assignment."
+          placeholder="Add any notes or instructions for this task."
           className={inputClass(errors.description)}
         />
       </Field>
@@ -105,7 +105,7 @@ function AssignmentForm({ initialValues, onSubmit, onCancel, submitLabel = 'Save
           className={inputClass(errors.status)}
         >
           <option value="pending">Pending</option>
-          <option value="completed">Completed</option>
+          <option value="completed">Achieved</option>
         </select>
       </Field>
 

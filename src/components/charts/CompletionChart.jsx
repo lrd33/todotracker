@@ -6,7 +6,7 @@ function CompletionChart({ completed, remaining }) {
   const total = completed + remaining
 
   const data = {
-    labels: ['Completed', 'Remaining'],
+    labels: ['Achieved', 'To Do'],
     datasets: [
       {
         data: [completed, remaining],
@@ -40,8 +40,8 @@ function CompletionChart({ completed, remaining }) {
 
   return (
     <ChartCard
-      title="Completed vs. remaining"
-      description="Share of assignments finished so far"
+      title="Achieved vs. To Do"
+      description="Share of tasks finished so far"
     >
       {total > 0 ? (
         <div className="relative h-full">
@@ -50,7 +50,7 @@ function CompletionChart({ completed, remaining }) {
             <span className="text-2xl font-semibold text-slate-900">
               {total > 0 ? Math.round((completed / total) * 100) : 0}%
             </span>
-            <span className="text-xs text-slate-500">completed</span>
+            <span className="text-xs text-slate-500">achieved</span>
           </div>
         </div>
       ) : (
@@ -63,7 +63,7 @@ function CompletionChart({ completed, remaining }) {
 function EmptyState() {
   return (
     <div className="flex h-full items-center justify-center text-sm text-slate-400">
-      No assignments yet.
+      No tasks yet.
     </div>
   )
 }

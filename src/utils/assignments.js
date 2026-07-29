@@ -94,7 +94,7 @@ export const PRIORITY_STYLES = {
 }
 
 export const STATUS_STYLES = {
-  completed: { label: 'Completed', badge: 'bg-green-50 text-green-700' },
+  completed: { label: 'Achieved', badge: 'bg-green-50 text-green-700' },
   overdue: { label: 'Overdue', badge: 'bg-red-50 text-red-700' },
   today: { label: 'Due today', badge: 'bg-blue-50 text-blue-700' },
   upcoming: { label: 'Upcoming', badge: 'bg-indigo-50 text-indigo-700' },

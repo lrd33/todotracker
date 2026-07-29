@@ -27,7 +27,7 @@ function Home() {
       <PageHeader
         icon={<DashboardIcon className="h-5 w-5" />}
         title="Dashboard"
-        description="Overview of your assignments and deadlines."
+        description="Overview of your tasks and deadlines."
       />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -41,7 +41,7 @@ function Home() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <AssignmentCategoryCard
-          title="Today's assignments"
+          title="Today's tasks"
           description="Due before the end of today"
           icon={<SunIcon className="h-5 w-5" />}
           color="blue"
@@ -60,12 +60,12 @@ function Home() {
         </AssignmentCategoryCard>
 
         <AssignmentCategoryCard
-          title="Upcoming assignments"
+          title="Upcoming tasks"
           description="Due in the days ahead"
           icon={<CalendarIcon className="h-5 w-5" />}
           color="indigo"
           count={upcoming.length}
-          emptyMessage="No upcoming assignments."
+          emptyMessage="No upcoming tasks."
         >
           {upcoming.map((item) => (
             <AssignmentListItem
@@ -79,7 +79,7 @@ function Home() {
         </AssignmentCategoryCard>
 
         <AssignmentCategoryCard
-          title="Overdue assignments"
+          title="Overdue tasks"
           description="Past their due date"
           icon={<AlertTriangleIcon className="h-5 w-5" />}
           color="red"
@@ -98,12 +98,12 @@ function Home() {
         </AssignmentCategoryCard>
 
         <AssignmentCategoryCard
-          title="Completed assignments"
+          title="Achieved tasks"
           description="Turned in and done"
           icon={<CheckCircleIcon className="h-5 w-5" />}
           color="green"
           count={completed.length}
-          emptyMessage="No completed assignments yet."
+          emptyMessage="No achieved tasks yet."
         >
           {completed.map((item) => (
             <AssignmentListItem

@@ -54,7 +54,7 @@ export function formatDueLabel(dueDate, referenceDate = new Date()) {
 
 export function formatCompletedLabel(completedDate, referenceDate = new Date()) {
   const diff = daysBetween(completedDate, referenceDate)
-  if (diff === 0) return 'Completed today'
-  if (diff === 1) return 'Completed yesterday'
-  return `Completed ${monthDayFormatter.format(completedDate)}`
+  if (diff === 0) return 'Achieved today'
+  if (diff === 1) return 'Achieved yesterday'
+  return `Achieved ${monthDayFormatter.format(completedDate)}`
 }

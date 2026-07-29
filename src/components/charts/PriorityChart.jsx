@@ -38,7 +38,7 @@ function PriorityChart({ priorityCounts }) {
   }
 
   return (
-    <ChartCard title="Assignments by priority" description="How your workload is weighted">
+    <ChartCard title="Work Queue" description="How your workload is weighted">
       {total > 0 ? <Doughnut data={data} options={options} /> : <EmptyState />}
     </ChartCard>
   )
@@ -47,7 +47,7 @@ function PriorityChart({ priorityCounts }) {
 function EmptyState() {
   return (
     <div className="flex h-full items-center justify-center text-sm text-slate-400">
-      No assignments yet.
+      No tasks yet.
     </div>
   )
 }
