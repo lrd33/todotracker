@@ -41,7 +41,7 @@ function CompletionChart({ completed, remaining }) {
   return (
     <ChartCard
       title="Achieved vs. To Do"
-      
+      description="Share of tasks finished so far"
     >
       {total > 0 ? (
         <div className="relative h-full">
